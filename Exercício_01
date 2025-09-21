@@ -1,0 +1,46 @@
+/*1) Faça um programa que receba três notas de um aluno, calcule e mostre a média aritmética e a
+mensagem constante na tabela a seguir. Aos alunos que ficaram para exame, calcule e mostre a nota
+que deverão tirar para serem aprovados, considerando que a média exigida é 6,0. */
+
+import java.util.Scanner;
+
+public class Exercicio_01 {
+  public static void main(String [] args){
+
+  double nota1,nota2,nota3,media,exame;
+  Scanner sc=new Scanner (System.in);
+
+  System.out.println("Digite valor da primeira nota");
+  nota1 = sc.nextDouble();
+  System.out.println("Digite valor da segunda nota");
+  nota2 = sc.nextDouble();
+  System.out.println("Digite valor da terceira nota");
+  nota3 = sc.nextDouble();
+
+
+  // Verificar se as notas estão no intervalo válido
+  if (nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10 || nota3 < 0 || nota3 > 10) {
+    System.out.println("Erro: As notas devem estar entre 0 e 10.");
+  } else {
+    // Cálculo da média
+    media = (nota1 + nota2 + nota3) / 3.0;
+    System.out.printf("Média do aluno: %.2f%n", media);
+
+  //fazer condições para o programa
+  if (media>=0 && media<3) {
+    System.out.println("Reprovado :( ");
+  } else if (media >=3 && media<7) {
+    System.out.println("Precisa fazer exame");
+    exame = 12-media;
+    System.out.printf("Nota necessária no exame para aprovação: %.2f%n", exame);
+  } else if (media >= 7 && media <= 10) {
+    System.out.println("Parabéns! Aprovado :)");
+  } else {
+    System.out.println("Média inválida. Verifique os valores inseridos.");
+  }
+  }
+sc.close();
+  }
+}
+
+
