@@ -1,0 +1,30 @@
+/* 5. Faça um programa que peça ao usuário um número entre 12 e 20. Se a pessoa digitar
+um número diferente, mostrar a mensagem "entrada inválida" e solicitar o número
+novamente. Se digitar correto mostrar o número digitado. */
+
+import java.util.Scanner;
+
+public class Exercicio05{
+    public static void main(String [] args){
+
+        int numero = 0;
+        Scanner sc=new Scanner(System.in);
+
+        do {
+            System.out.println("Digite um número entre 12 e 20");
+            numero = sc.nextInt();
+
+            if (numero >= 12 && numero <= 20) {
+                System.out.println(numero);
+                //se váriavel for entre 12 e 20, mostra número digitado
+            }else {
+                System.out.println("Entrada inválida. Tente novamente.");
+                // caso não preciso informar que é invalido
+            }} while (numero<12 || numero >20);
+        //ter condição para que tenha uma repetição caso o usuário erre
+
+        sc.close();
+        System.out.println("Programa encerrado");
+
+    }
+}
