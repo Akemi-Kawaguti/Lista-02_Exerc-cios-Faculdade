@@ -1,0 +1,34 @@
+/*6. Usando o laço while para pedir ao usuário que tente acertar um número aleatório
+entre 0 e 10 (incluindo) e mostrar a quantidade de tentativas feitas. Dica: Usar o
+comando Random numero = new Random();*/
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Exercicio06{
+    public static void main(String [] args){
+
+        int tentativa = 0,user,nRandom; //tentativa é meu contador
+        Scanner sc=new Scanner(System.in);
+
+        Random numero = new Random();
+        nRandom = numero.nextInt(11);
+
+        System.out.println("Tente acertar um número de 0 a 10, digitando um número");
+        user = sc.nextInt();
+        tentativa++;
+
+        while(user!=nRandom){
+            System.out.println("Quantidade de tentativas é: "+tentativa);
+            System.out.println("Digite novamente");
+            user = sc.nextInt();
+            tentativa++;
+            }
+
+        System.out.println("Parabéns o número é: "+nRandom);
+
+        sc.close();
+        System.out.println("Programa encerrado");
+
+    }
+}
