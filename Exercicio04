@@ -1,0 +1,33 @@
+/* 4. Escreva um programa com um looping indeterminado com while em que enquanto o
+usuário não pedir para o programa sair, ele continua printando um contador na tela. */
+
+import java.util.Scanner;
+
+public class Exercicio04{
+    public static void main(String [] args){
+
+        String sair=""; //para iniciar esse tipo de váriavel
+        int numero = 0;
+
+        System.out.println("Pressione ENTER para continuar");
+        System.out.println("Digite + para sair e ENTER");
+
+        Scanner sc=new Scanner(System.in);
+
+        // se for diferente de + o programa continua
+        while (!sair.equals("+")){
+            System.out.println(numero);
+            numero++;
+
+            if (sc.hasNextLine()){
+                sair = sc.nextLine();
+            }
+        }
+
+        sc.close();
+        System.out.println("Programa encerrado");
+
+    }
+}
+
+//para um próximo treino, fazer programa sem que precise do usuário digitar enter para continuar
